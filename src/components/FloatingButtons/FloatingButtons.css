@@ -1,0 +1,148 @@
+.floating-buttons {
+  position: fixed;
+  right: 24px;
+  bottom: 28px;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.floating-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid rgba(25, 216, 255, 0.3);
+  border-radius: 16px;
+  color: white;
+  background: rgba(5, 14, 24, 0.9);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.3),
+    0 0 22px rgba(25, 216, 255, 0.08);
+  backdrop-filter: blur(14px);
+  transition:
+    width 0.35s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.floating-button svg {
+  flex: 0 0 auto;
+  font-size: 22px;
+}
+
+.floating-button span {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  font-size: 14px;
+  font-weight: 800;
+  transition:
+    width 0.35s ease,
+    margin-left 0.35s ease,
+    opacity 0.25s ease;
+}
+
+.floating-button:hover {
+  width: 170px;
+  justify-content: flex-start;
+  padding: 0 17px;
+  transform: translateX(-4px);
+  border-color: rgba(25, 216, 255, 0.75);
+}
+
+.floating-button:hover span {
+  width: auto;
+  margin-left: 11px;
+  opacity: 1;
+}
+
+.floating-whatsapp {
+  color: white;
+  background: rgba(18, 150, 83, 0.92);
+  border-color: rgba(67, 255, 154, 0.34);
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    0 0 25px rgba(37, 211, 102, 0.16);
+}
+
+.floating-whatsapp:hover {
+  background: #25d366;
+  border-color: #60f59a;
+  color: #04160b;
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.32),
+    0 0 34px rgba(37, 211, 102, 0.34);
+}
+
+.floating-calendar {
+  color: #031018;
+  background: #19d8ff;
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.28),
+    0 0 28px rgba(25, 216, 255, 0.25);
+}
+
+.floating-calendar:hover {
+  color: #031018;
+  background: #6cecff;
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.32),
+    0 0 36px rgba(25, 216, 255, 0.42);
+}
+
+.floating-top {
+  border: 0;
+  color: #19d8ff;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(15px);
+}
+
+.floating-top-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.floating-top:hover {
+  color: #031018;
+  background: #19d8ff;
+}
+
+@media (max-width: 700px) {
+  .floating-buttons {
+    right: 14px;
+    bottom: 16px;
+    gap: 9px;
+  }
+
+  .floating-button {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .floating-button svg {
+    font-size: 20px;
+  }
+
+  .floating-button:hover {
+    width: 48px;
+    padding: 0;
+    justify-content: center;
+    transform: translateY(-3px);
+  }
+
+  .floating-button:hover span,
+  .floating-button span {
+    display: none;
+  }
+}
